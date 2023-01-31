@@ -8,9 +8,8 @@ import os.log
 
 final class DataModel: ObservableObject {
     let camera = Camera()
-//  let photoCollection = PhotoCollection(smartAlbum: .smartAlbumUserLibrary)
-  let photoCollection = PhotoCollection(albumNamed: "Dice", createIfNotFound: true)
-
+    let photoCollection = PhotoCollection(smartAlbum: .smartAlbumUserLibrary)
+    
     @Published var viewfinderImage: Image?
     @Published var thumbnailImage: Image?
     
@@ -53,7 +52,6 @@ final class DataModel: ObservableObject {
         guard let imageData = photo.fileDataRepresentation() else { return nil }
 
         // https://developer.apple.com/documentation/avfoundation/avcapturephoto/2873963-cgimagerepresentation
-        
         guard let previewCGImage = photo.previewCGImageRepresentation(),
            let metadataOrientation = photo.metadata[String(kCGImagePropertyOrientation)] as? UInt32,
               let cgImageOrientation = CGImagePropertyOrientation(rawValue: metadataOrientation) else { return nil }
