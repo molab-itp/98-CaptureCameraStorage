@@ -1,4 +1,4 @@
-# [98-CaptureCameraStorage](https://github.com/mobilelabclass-itp/98-CaptureCameraStorage)
+# [98-CaptureCameraStorage](https://github.com/molab-itp/98-CaptureCameraStorage)
 
 ```
 # Browsing Your Photos
